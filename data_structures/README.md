@@ -1,7 +1,7 @@
 DataStructure 자료구조
 ======================
 1. BinarySearchTree - 이진탐색트리
->[이진탐색 자세히]https://ko.wikipedia.org/wiki/이진_탐색_트리
+>https://ko.wikipedia.org/wiki/이진_탐색_트리
 1. Digraph - 방향그래프
 1. lcpArray - 전치사배열 및 lcp
 1. Queue - 큐
