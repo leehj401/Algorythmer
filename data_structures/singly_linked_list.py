@@ -10,9 +10,19 @@
 
     Pseudo Code: https://en.wikipedia.org/wiki/Linked_list
 """
-
+"""
+    싱글 링크드 리스트
+    -----------------
+    링크드 리스트는 구조가 많은데 그중에서도 가벼운데 쓰이고 이건 Head만 있고
+    Tail은 없는 구조이다.
+"""
 
 class Node:
+    '''
+    하나하나 들어가잇는 노드이다
+    
+    init을 데이터와 다음값으로 해준다
+    '''
 
     def __init__(self, data=None, next=None):
         self.data = data
@@ -42,6 +52,8 @@ class SinglyLinkedList:
         Add element to list
 
         Time Complexity:  O(N)
+
+        노드를 추가해준다.
         """
         node = Node(value)
         node.set_next(self.head)
@@ -72,6 +84,8 @@ class SinglyLinkedList:
         """
         Remove element from list
 
+        노드를 삭제해준다. 마지막Tail이 없기때문에 시간복잡도가 오래걸린다.
+
         Time Complexity:  O(N)
         """
 
@@ -82,6 +96,8 @@ class SinglyLinkedList:
         Search for value in list
 
         Time Complexity:  O(N)
+
+        찾고 싶은값을 패러미터로 넣어준다.
         """
         return self._search_node(value)
 

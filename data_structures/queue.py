@@ -11,6 +11,9 @@
 
     Pseudo Code: https://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29
 """
+"""
+    Queue이고 수평적인 자료구조이다. LIFO에 전형적인 예시이다.
+"""
 from collections import deque
 
 
@@ -25,6 +28,9 @@ class Queue:
 
         Worst Case Complexity:  O(1)
         """
+        '''
+        큐에 값을 넣는다
+        '''
         self._queue.append(value)
 
     def remove(self):
@@ -33,6 +39,9 @@ class Queue:
 
         Worst Case Complexity:  O(1)
         """
+        '''
+        값을 삭제해준다. 값은 무조건 줄슨것 처럼 먼저것이 먼저 나간다
+        '''
 
         return self._queue.popleft()
 

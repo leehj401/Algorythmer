@@ -10,10 +10,17 @@
     Pseudo Code: http://algs4.cs.princeton.edu/32bst
 """
 
+"""
+    이진 탐색 트리로 트리 및에 잎처럼 노드가 있는 구조이다
+    _메소드는 프라이빗 메소드
+
+"""
+
 
 class Node(object):
     """
     Implementation of a Node in a Binary Search Tree.
+    바이너리 서치트리의 노드
     """
 
     def __init__(self, key=None, val=None, size_of_subtree=1):
@@ -46,6 +53,9 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(1)
         """
+        '''
+        사이즈를 리턴 위에 복잡도
+        '''
         return self._size(self.root)
 
     def is_empty(self):
@@ -77,6 +87,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        키를 찾는 메소드 객체.get("키")를 넣으면 찾아올수 있다.
+        '''
         return self._get(key, self.root)
 
     def contains(self, key):
@@ -87,6 +101,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        get과 같은 메소드
+        '''
         return self.get(key) is not None
 
     def _put(self, key, val, node):
@@ -116,6 +134,9 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+        '''
+        새로운 키를 넣는 메소드
+        '''
         self.root = self._put(key, val, self.root)
 
     def _min_node(self):
@@ -140,6 +161,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        가장 작은 키값을 돌려주는 것
+        '''
         min_node = self._min_node()
         if min_node is None:
             return None
@@ -168,6 +193,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        가장 큰 키값을 반환한다
+        '''
         max_node = self._max_node()
         if max_node is None:
             return None
@@ -207,6 +236,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+        '''
+        근사값 찾기
+        패러미터로 키를 넣는다.
+        '''
         floor_node = self._floor_node(key, self.root)
         if floor_node is None:
             return None
@@ -244,6 +277,9 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+        '''
+        작거나 같은 값을 준다 (근사값과 비슷함)
+        '''
         ceiling_node = self._ceiling_node(key, self.root)
         if ceiling_node is None:
             return None
@@ -273,6 +309,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        같은 값을 가져온다
+        '''
         select_node = self._select_node(rank, self.root)
         if select_node is None:
             return None
@@ -299,6 +339,9 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+        '''
+        키보다 작은 값을 돌려준다
+        '''
         return self._rank(key, self.root)
 
     def _delete(self, key, node):
@@ -330,6 +373,9 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+        '''
+        키값과 같은값을 삭제한다
+        '''
         self.root = self._delete(key, self.root)
 
     def _delete_min(self, node):
@@ -349,6 +395,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        가장 작은것을 삭제한다
+        '''
         self.root = self._delete_min(self.root)
 
     def _delete_max(self, node):
@@ -367,6 +417,10 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(lg N)
         """
+
+        '''
+        가장 큰 값을 삭제한다
+        '''
         self.root = self._delete_max(self.root)
 
     def _keys(self, node, keys):
@@ -391,5 +445,8 @@ class BinarySearchTree(object):
 
         Balanced Tree Complexity: O(N)
         """
+        '''
+        키값들을 준다(오름차순으로)
+        '''
         keys = []
         return self._keys(self.root, keys)
